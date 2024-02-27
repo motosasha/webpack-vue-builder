@@ -15,11 +15,11 @@ export default (env) => {
   const isProd = env.mode === "production";
 
   const buildPaths = {
-    output: path.resolve(__dirname, "dist"),
-    entry: path.resolve(__dirname, "src", "main.js"),
-    html: path.resolve(__dirname, "/", "index.html"),
-    public: path.resolve(__dirname, "public"),
-    src: path.resolve(__dirname, "src"),
+    output: path.resolve(__dirname, "./dist"),
+    entry: path.resolve(__dirname, "./src", "main.js"),
+    html: path.resolve(__dirname, "./", "index.html"),
+    public: path.resolve(__dirname, "./public"),
+    src: path.resolve(__dirname, "./src"),
   };
 
   return {
@@ -67,10 +67,7 @@ export default (env) => {
       rules: [
         {
           test: /\.vue$/,
-          use: [
-            "vue-loader",
-            // 'eslint-loader'
-          ],
+          use: ["vue-loader"],
         },
         {
           test: /\.scss$/,
@@ -83,10 +80,7 @@ export default (env) => {
         },
         {
           test: /\.svg$/,
-          use: [
-            // 'babel-loader',
-            "vue-svg-loader",
-          ],
+          use: ["vue-svg-loader"],
         },
         {
           test: /\.(png|jpg|jpeg|gif)$/i,
